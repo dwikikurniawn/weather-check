@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "21584d3f-1efc-405b-987f-2203949db377",
+		"name": "weather-check",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11110167"
+	},
+	"item": [
+		{
+			"name": "check-weather-by-city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://city-weather-check-app.herokuapp.com/weather?city=city-name",
+					"protocol": "https",
+					"host": [
+						"city-weather-check-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "city-name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check-weather-by-coordinate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://city-weather-check-app.herokuapp.com/weather/coordinate?lon=longitude-value&lat=latitude-value",
+					"protocol": "https",
+					"host": [
+						"city-weather-check-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"weather",
+						"coordinate"
+					],
+					"query": [
+						{
+							"key": "lon",
+							"value": "longitude-value"
+						},
+						{
+							"key": "lat",
+							"value": "latitude-value"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

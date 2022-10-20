@@ -18,3 +18,5 @@ mvn spring-boot:run
 After the application run, you can access the API on `localhost:8082/{API-path}`. You also can choose specific port where you want to run this application by setting up the value on `application.properties` at property `server.port`
 ### NOTE
 - You may need update the App-Id from [OpenWeatherMap](https://openweathermap.org/) on `application.properties` at property `weather.app.id` when the previous App-Id expires.
+- This application deployed on [Heroku](https://www.heroku.com/) and you can access the application through `https://city-weather-check-app.herokuapp.com/{API-Path}`
+- You can also import the [Postman Collection](https://www.postman.com/) on `weather-check.postman_collection.json` to see the APIs documentation on your `Postman` Application at your local.
