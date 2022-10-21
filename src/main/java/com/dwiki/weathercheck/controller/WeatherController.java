@@ -4,16 +4,14 @@ import com.dwiki.weathercheck.dto.WeatherDataDto;
 import com.dwiki.weathercheck.service.WeatherDataService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * This controller class consist APIs to check weather of a city around the world
  *
  * @author Dwiki Kurniawan
  */
+@CrossOrigin
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "/weather")
