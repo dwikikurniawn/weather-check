@@ -13,13 +13,14 @@ import org.springframework.web.client.RestTemplate;
  */
 @Repository
 @AllArgsConstructor
-public class WeatherClientImpl {
+public class WeatherClientImpl implements  WeatherClient{
     private final ApplicationProperties applicationProperties;
 
     /**
      * @param city city name around the world that you want to check its weather e.g. Sydney, Jakarta, New York, etc.
      * @return Weather data of a city with information: city name, the weather, description of the weather,longitude, and longitude of the city.
      */
+    @Override
     public WeatherData checkByCity(String city) {
         String uri = applicationProperties.getWeatherUri() + "?q=" + city + "&appid=" + applicationProperties.getWeatherAppId();
         RestTemplate restTemplate = new RestTemplate();
@@ -31,7 +32,8 @@ public class WeatherClientImpl {
      * @param lat latitude value
      * @return Weather data of a city with information: city name, the weather, description of the weather,longitude, and longitude of the city.
      */
-    public WeatherData checkByLongitudeLatitude(double lon, double lat) {
+    @Override
+    public WeatherData checkByLongitudeLatitude(Double lon, Double lat) {
         String uri = applicationProperties.getWeatherUri() + "?lat=" + lat + "&lon=" + lon + "&appid=" + applicationProperties.getWeatherAppId();
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(uri, WeatherData.class);
